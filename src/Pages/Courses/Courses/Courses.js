@@ -1,25 +1,21 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { useLoaderData } from 'react-router-dom';
+import SideNav from '../../Shared/SideNav/SideNav';
 import Course from '../Course/Course';
 import './Courses.css'
 
 const Courses = () => {
-    const [courses, setCourses] = useState([]);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/online-courses')
-            .then(res => res.json())
-            .then(data => setCourses(data));
-    }, [])
+    const courses = useLoaderData();
+
     return (
         <div>
             <h2>This Is Courses {courses.length}</h2>
             <Container>
                 <Row>
                     <Col lg="5">
-                        <h2>This Is Side</h2>
+                        <SideNav></SideNav>
                     </Col>
                     <Col lg="7">
                         <div className='card-group'>
