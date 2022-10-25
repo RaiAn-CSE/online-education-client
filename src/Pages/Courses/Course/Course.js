@@ -1,11 +1,12 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import './Course.css'
 
 const Course = ({ course }) => {
     // console.log(course);
     return (
-        <div>
+        <div className=''>
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={course.img} />
                 <Card.Body>
