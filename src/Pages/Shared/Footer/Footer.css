@@ -1,16 +1,90 @@
-.footer {
+footer {
     width: 100%;
-    text-align: center;
-    text-align: center;
+    height: 300px;
     color: white;
-    background-color: black;
+    background-color: #161616;
+    font-family: var(--font1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
 }
 
-.footer h5 {
-    padding: 30px;
+.footer-title {
+    margin-bottom: 12px;
 }
 
-hr {
-    color: white;
-    padding: 10px;
+footer hr {
+    width: 85%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 40px;
 }
+
+footer .footer-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 45px;
+    color: #B9B9B9;
+}
+
+.footer-menu {
+    margin-bottom: 35px;
+    display: flex;
+}
+
+.social-media-link a {
+    font-size: 18px;
+    color: white;
+
+}
+
+.social-media-link {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 20px;
+}
+
+/* -----------------------------------------------------------End Footer */
+/* ------------------------------------------Mobile View Start */
+
+@media screen and (max-width:688px) {
+    footer {
+        height: 500px;
+    }
+
+    .footer-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .footer-menu a {
+        margin-right: 0;
+        margin-top: 18px;
+    }
+
+    .social-media-link {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* ------------------------------------------Mobile View End  */
+
+/* --------------------------------------------------------------------iPad View  */
+@media only screen and (min-width:688px) and (max-width:992px) {
+
+    footer {
+        margin-top: 50px;
+    }
+
+    .footer-menu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 30px;
+    }
+}
+
+/* --------------------------------------------------------------------iPad View End  */
