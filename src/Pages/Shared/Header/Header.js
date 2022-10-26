@@ -20,18 +20,17 @@ const Header = () => {
     return (
         <Navbar bg="light" expand="lg">
             <Container>
-                <Navbar.Brand><Link to='/'>News World</Link></Navbar.Brand>
+                <Navbar.Brand><Link to='/'>Online Education</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <Link className='me-2' to="/courses">Courses</Link>
-                        <Link to="/faq">FAQ</Link>
+                        <Link className='me-2' to="/faq">FAQ</Link>
+                        <Link to="/blog">Blog</Link>
                         <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                Another action
+                            <NavDropdown.Item href="#action/3.3">
+                                Something
                             </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action/3.4">
                                 Separated link

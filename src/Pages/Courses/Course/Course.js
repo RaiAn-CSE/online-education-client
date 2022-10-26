@@ -16,12 +16,12 @@ const Course = ({ course }) => {
                     <Card.Text>
                         {
                             details.length > 100 ?
-                                <p>{details.slice(0, 250) + '...'}<Link to={`/course-details/${id}`}>Read More</Link></p>
+                                <p>{details.slice(0, 100) + '...'}<Link to={`/course-details/${id}`}>Read More</Link></p>
                                 :
                                 <p>{details}</p>
                         }
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <Button variant=""><Link to={`/course-details/${id}`}>Get Premium</Link></Button>
                 </Card.Body>
             </Card>
         </div>

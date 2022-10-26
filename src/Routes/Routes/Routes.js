@@ -7,6 +7,7 @@ import CourseDetails from "../../Pages/CourseDetails/CourseDetails";
 import Login from "../../Pages/Login/Login/Login";
 import Registration from "../../Pages/Login/Registration/Registration";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Blog from "../../Pages/Blog/Blog";
 
 
 export const routes = createBrowserRouter([
@@ -31,6 +32,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/faq',
                 element: <Faq></Faq>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             },
             {
                 path: '/login',
