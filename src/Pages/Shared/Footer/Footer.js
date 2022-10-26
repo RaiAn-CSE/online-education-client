@@ -1,10 +1,12 @@
 import React from 'react';
+import './Footer.css'
 
 const Footer = () => {
     return (
-        <div>
-            <h3>@ Copyright === This is Footer </h3>
-        </div>
+        <footer className='footer'>
+            <hr />
+            <h5>Programming Hero. © Online Education All rights reserved Copyrights 2022</h5>
+        </footer>
     );
 };
 

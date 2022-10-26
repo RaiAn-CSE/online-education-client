@@ -1,0 +1,16 @@
+.footer {
+    width: 100%;
+    text-align: center;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+.footer h5 {
+    padding: 30px;
+}
+
+hr {
+    color: white;
+    padding: 10px;
+}

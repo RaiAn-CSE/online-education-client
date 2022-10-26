@@ -7,6 +7,7 @@ import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import ReactTooltip from 'react-tooltip';
+import logo from '../../../images/logo/logo.png'
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -21,7 +22,16 @@ const Header = () => {
     return (
         <Navbar bg="light" expand="lg">
             <Container>
-                <Navbar.Brand><Link to='/'>Online Education</Link></Navbar.Brand>
+                <Navbar.Brand href="#home">
+                    <img
+                        src={logo}
+                        width="30"
+                        height="30"
+                        className="d-inline-block align-top"
+                        alt="React Bootstrap logo"
+                    />
+                </Navbar.Brand>
+                <Navbar.Brand>Online Education</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
@@ -43,7 +53,6 @@ const Header = () => {
                             {
                                 user?.uid ?
                                     <>
-                                        {user?.displayName}
                                         <Button onClick={handlerLogout} variant="light" style={{ marginLeft: '20px' }}>Log Out</Button>
                                     </>
                                     :
@@ -64,8 +73,6 @@ const Header = () => {
                                         ></Image>
                                         <ReactTooltip />
                                     </div>
-
-
                                     : <FaUser></FaUser>
                             }
                         </Nav.Link>
