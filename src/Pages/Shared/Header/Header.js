@@ -6,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
+import ReactTooltip from 'react-tooltip';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -51,17 +52,20 @@ const Header = () => {
                                         <Link to="/registration">Registration</Link>
                                     </>
                             }
-
-
                         </Nav.Link>
                         <Nav.Link eventKey={2} href="#memes">
                             {
                                 user?.photoURL ?
-                                    <Image
-                                        roundedCircle
-                                        style={{ height: '30px' }}
-                                        src={user?.photoURL}
-                                    ></Image>
+                                    <div data-tip={user.displayName}>
+                                        <Image
+                                            roundedCircle
+                                            style={{ height: '30px' }}
+                                            src={user?.photoURL}
+                                        ></Image>
+                                        <ReactTooltip />
+                                    </div>
+
+
                                     : <FaUser></FaUser>
                             }
                         </Nav.Link>
