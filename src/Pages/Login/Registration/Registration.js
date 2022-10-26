@@ -60,8 +60,8 @@ const Registration = () => {
         <Container>
             <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Your Name</Form.Label>
-                    <Form.Control name="name" type="text" placeholder="Your name" />
+                    <Form.Label>Full Name</Form.Label>
+                    <Form.Control name="name" type="text" placeholder="Enter Your Full name" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Photo URL</Form.Label>

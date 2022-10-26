@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import ReactTooltip from 'react-tooltip';
 import logo from '../../../images/logo/logo.png'
+import './Header.css'
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -20,7 +21,7 @@ const Header = () => {
             .catch(error => console.error(error))
     }
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar className='navbar-container' bg="light" expand="lg">
             <Container>
                 <Navbar.Brand href="#home">
                     <img
@@ -35,9 +36,12 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Link className='me-2 fw-semibold' to="/courses">Courses</Link>
-                        <Link className='me-2 fw-semibold' to="/faq">FAQ</Link>
-                        <Link to="/blog">Blog</Link>
+                        <div className='mt-2'>
+                            <Link className='mx-2 fw-semibold' to="/">Home</Link>
+                            <Link className='mx-2 fw-semibold' to="/courses">Courses</Link>
+                            <Link className='mx-2 fw-semibold' to="/faq">FAQ</Link>
+                            <Link className='mx-2 fw-semibold' to="/blog">Blog</Link>
+                        </div>
                         <NavDropdown className='fw-semibold' title="Theme" id="collasible-nav-dropdown">
                             <NavDropdown.Item href="#action/3.3">
                                 Dark
@@ -57,8 +61,8 @@ const Header = () => {
                                     </>
                                     :
                                     <>
-                                        <Link className='me-2 fw-semibold' to="/login">Login</Link>
-                                        <Link className='me-2 fw-semibold' to="/registration">Registration</Link>
+                                        <Link className='mx-2 fw-semibold' to="/login">Login</Link>
+                                        <Link className='mx-2 fw-semibold' to="/registration">Registration</Link>
                                     </>
                             }
                         </Nav.Link>

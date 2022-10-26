@@ -6,7 +6,6 @@ import './Course.css'
 
 const Course = ({ course }) => {
     const { img, name, details, id } = course;
-    // console.log(course);
     return (
         <div className=''>
             <Card style={{ width: '18rem' }}>

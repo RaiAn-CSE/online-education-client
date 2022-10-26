@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
@@ -29,7 +29,6 @@ const Login = () => {
                 console.log(from)
             })
             .catch(error => {
-                // console.error(error);
                 setError(error.message);
             })
     }
@@ -47,6 +46,11 @@ const Login = () => {
                 <Button variant="primary" type="submit">
                     Login
                 </Button>
+
+                <Button className='ms-2' variant="outline-primary" type="submit">
+                    <Link to="/registration">Registration</Link>
+                </Button>
+
                 <Form.Text className='text-danger'>
                     {error}
                 </Form.Text>

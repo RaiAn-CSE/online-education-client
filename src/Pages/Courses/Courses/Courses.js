@@ -11,11 +11,12 @@ const Courses = () => {
 
     return (
         <div>
-            <h2>This Is Courses {courses.length}</h2>
             <Container>
                 <Row>
                     <Col lg="5">
-                        <SideNav></SideNav>
+                        <div className="sticky-top courses">
+                            <SideNav></SideNav>
+                        </div>
                     </Col>
                     <Col lg="7">
                         <div className='card-group'>
