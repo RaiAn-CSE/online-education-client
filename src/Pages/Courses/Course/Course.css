@@ -2,3 +2,12 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
+.get-premium a {
+    text-decoration: none;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+}

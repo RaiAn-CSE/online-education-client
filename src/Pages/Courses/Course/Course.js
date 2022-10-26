@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './Course.css'
 
 const Course = ({ course }) => {
-    const { img, name, details, id } = course;
+    const { img, name, details, ratings, price, time, id } = course;
     return (
         <div className=''>
             <Card style={{ width: '18rem' }}>
@@ -20,7 +20,12 @@ const Course = ({ course }) => {
                                 <p>{details}</p>
                         }
                     </Card.Text>
-                    <Button variant=""><Link to={`/course-details/${id}`}>Get Premium</Link></Button>
+                    <div className='card-info'>
+                        <p> Ratings: {ratings}</p>
+                        <p>{time}</p>
+                        <p>{price}</p>
+                    </div>
+                    <Button className='get-premium fw-semibold' variant="outline-success"><Link to={`/course-details/${id}`}>Get Premium</Link></Button>
                 </Card.Body>
             </Card>
         </div>
