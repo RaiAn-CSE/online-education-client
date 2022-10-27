@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css'
 import { FaFacebook, FaFacebookMessenger, FaTwitterSquare, FaYoutube } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -10,12 +11,12 @@ const Footer = () => {
             </div>
             <hr></hr>
             <div className="footer-menu">
-                <a href="#">Contact Us</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Privacy Settings</a>
-                <a href="#">Support</a>
-                <a href="#">Live Class</a>
+                <Link href="#">Contact Us</Link>
+                <Link href="#">Terms of Service</Link>
+                <Link href="#">Privacy Policy</Link>
+                <Link href="#">Privacy Settings</Link>
+                <Link href="#">Support</Link>
+                <Link href="#">Live Class</Link>
             </div>
             <div className="social-media-link">
                 <a className="fb" href="https://web.facebook.com//?_rdc=1&_rdr"><FaFacebook></FaFacebook></a>
@@ -24,7 +25,7 @@ const Footer = () => {
                     href="https://twitter.com/?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%"><FaTwitterSquare></FaTwitterSquare></a>
                 <a className="youtube" href="https://www.youtube.com/"><FaYoutube></FaYoutube></a>
             </div>
-            <h6 className='mt-3'>Copyright © 2022 Programming-hero.com</h6>
+            <small className='mt-3'>Copyright © 2022 OnlineEducation.com</small>
         </footer >
     );
 };
