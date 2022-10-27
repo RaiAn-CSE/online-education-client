@@ -13,12 +13,12 @@ const Courses = () => {
         <div>
             <Container>
                 <Row>
-                    <Col lg="5">
+                    <Col lg="4">
                         <div className="sticky-top courses">
                             <SideNav></SideNav>
                         </div>
                     </Col>
-                    <Col lg="7">
+                    <Col lg="8">
                         <div className='card-group'>
                             {
                                 courses.map(course => <Course

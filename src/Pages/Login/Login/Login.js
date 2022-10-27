@@ -1,17 +1,29 @@
 import React, { useContext, useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { ButtonGroup, Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
+import { FaGithub, FaGoogle } from "react-icons/fa";
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
-    const { loginUser } = useContext(AuthContext)
+    const { loginUser, loginInWithGoogle } = useContext(AuthContext)
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
+    const googleProvider = new GoogleAuthProvider()
 
     const from = location.state?.from?.pathname || '/';
+
+    const handleGoogleSignIn = () => {
+        loginInWithGoogle(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error))
+    }
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -43,10 +55,15 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control name="password" type="password" placeholder="Password" required />
                 </Form.Group>
+                <div className='mb-2'>
+                    <ButtonGroup vertical>
+                        <Button onClick={handleGoogleSignIn} className='mb-2' variant="outline-primary"> <FaGoogle></FaGoogle> Login with Google</Button>
+                        <Button variant="outline-dark"> <FaGithub></FaGithub> Login with Github</Button>
+                    </ButtonGroup>
+                </div>
                 <Button variant="primary" type="submit">
                     Login
                 </Button>
-
                 <Button className='ms-2' variant="outline-primary" type="submit">
                     <Link to="/registration">Registration</Link>
                 </Button>
