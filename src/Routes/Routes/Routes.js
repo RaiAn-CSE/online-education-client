@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Link } from "react-router-dom";
 import Home from "../../Pages/Home/Home";
 import Main from "../../layout/Main/Main";
 import Courses from "../../Pages/Courses/Courses/Courses";
@@ -45,6 +45,15 @@ export const routes = createBrowserRouter([
                 path: '/registration',
                 element: <Registration></Registration>
             },
+            {
+                path: '*',
+                element:
+                    <div className="mt-5 text-center">
+                        <h1>This route not found</h1>
+                        <h2 className="mt-3">Go to home Page clicking bellow:</h2>
+                        <Link to="/">Go To Home</Link>
+                    </div>
+            }
         ]
     }
 ])
