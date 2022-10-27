@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Image, NavDropdown } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -8,10 +8,12 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import ReactTooltip from 'react-tooltip';
 import logo from '../../../images/logo/logo.png'
+import DarkModeToggle from "react-dark-mode-toggle";
 import './Header.css'
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
+    const [isDarkMode, setIsDarkMode] = useState(() => false);
 
     const handlerLogout = () => {
         logOut()
@@ -53,6 +55,13 @@ const Header = () => {
                         </NavDropdown>
                     </Nav>
                     <Nav>
+                        <div className='mt-2'>
+                            <DarkModeToggle
+                                onChange={setIsDarkMode}
+                                checked={isDarkMode}
+                                size={40}
+                            />
+                        </div>
                         <Nav.Link href="#deets">
                             {
                                 user?.uid ?
