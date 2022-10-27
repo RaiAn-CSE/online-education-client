@@ -9,6 +9,7 @@ import ReactToPdf from 'react-to-pdf';
 const CourseDetails = () => {
     const course = useLoaderData();
     const pdfRef = useRef();
+    // Destructuring 
     const { name, img, details, ratings, time, price } = course;
     return (
         <Container ref={pdfRef}>
@@ -24,8 +25,12 @@ const CourseDetails = () => {
                         <p>{time}</p>
                         <p>{price}</p>
                     </div>
+
+                    {/* Back to the course from details page  */}
                     <Button className='go-back-home' variant="outline-success"><Link to="/courses">Go Back Courses</Link></Button>
                 </Card.Body>
+
+                {/* Download PDF Option  */}
                 <ReactToPdf targetRef={pdfRef} scale={0.6}>
                     {({ toPdf }) => <Button variant="success" onClick={toPdf} style={{ margin: "10px auto" }}>Download PDF</Button>}
                 </ReactToPdf>

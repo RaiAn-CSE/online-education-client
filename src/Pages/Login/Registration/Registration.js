@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-// import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
@@ -11,6 +10,7 @@ const Registration = () => {
     const [error, setError] = useState('');
     const [accepted, setAccepted] = useState(false);
 
+    // Get Email Password from user 
     const handleRegister = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -18,7 +18,6 @@ const Registration = () => {
         const photoURL = form.photoURL.value
         const email = form.email.value;
         const password = form.password.value;
-        // console.log(name, photoURL, email, password);
 
         createUser(email, password)
             .then(result => {
@@ -28,7 +27,6 @@ const Registration = () => {
                 setError('');
                 handleProfile(name, photoURL)
                 handleVerify();
-                // toast.success("Plz check your email and verify it")
             })
             .catch(error => {
                 console.error(error)
@@ -37,7 +35,6 @@ const Registration = () => {
     }
 
     const handleProfile = (name, photoURL) => {
-
         const profile = {
             displayName: name,
             photoURL: photoURL,
@@ -75,12 +72,15 @@ const Registration = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control name="password" type="password" placeholder="Password" required />
                 </Form.Group>
+
+                {/* If all conditions accepted then can register  */}
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox"
                         onClick={handleAccepted}
                         label={<>Accept <Link to='/terms'>to our terms and conditions</Link></>}
                     />
                 </Form.Group>
+
                 <Button variant="primary" type="submit" disabled={!accepted}>
                     Registration
                 </Button>

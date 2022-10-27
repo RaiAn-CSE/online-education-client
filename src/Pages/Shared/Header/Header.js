@@ -84,6 +84,7 @@ const Header = () => {
                                             style={{ height: '30px' }}
                                             src={user?.photoURL}
                                         ></Image>
+                                        {/* Tooltip  */}
                                         <ReactTooltip />
                                     </div>
                                     : <FaUser></FaUser>

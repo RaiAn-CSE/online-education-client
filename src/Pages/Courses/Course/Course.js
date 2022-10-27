@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import './Course.css'
 
 const Course = ({ course }) => {
+    // Destructuring 
     const { img, name, details, ratings, price, time, id } = course;
     return (
         <div className=''>
@@ -25,6 +26,8 @@ const Course = ({ course }) => {
                         <p>{time}</p>
                         <p>{price}</p>
                     </div>
+
+                    {/* Private Route  */}
                     <Button className='get-premium fw-semibold' variant="outline-success"><Link to={`/course-details/${id}`}>Get Premium</Link></Button>
                 </Card.Body>
             </Card>

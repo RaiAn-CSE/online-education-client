@@ -17,6 +17,7 @@ const Login = () => {
 
     const from = location.state?.from?.pathname || '/';
 
+    // Google sign in 
     const handleGoogleSignIn = () => {
         loginInWithGoogle(googleProvider)
             .then(result => {
@@ -26,6 +27,7 @@ const Login = () => {
             .catch(error => console.error(error))
     }
 
+    // GitHub sign in 
     const githubSignIn = () => {
         loginInWithGithub(githubProvider)
             .then(result => {
@@ -37,6 +39,7 @@ const Login = () => {
             })
     }
 
+    // Email Password Sign in 
     const handleLogin = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -76,6 +79,8 @@ const Login = () => {
                 <Button variant="primary" type="submit">
                     Login
                 </Button>
+
+                {/* Go to registration Page  */}
                 <Button className='ms-2' variant="outline-primary" type="submit">
                     <Link to="/registration">Registration</Link>
                 </Button>

@@ -13,11 +13,15 @@ const Courses = () => {
         <div>
             <Container>
                 <Row>
+
+                    {/* Side Nav column  */}
                     <Col lg="4">
-                        <div className="sticky-top courses">
+                        <div className="sticky-top courses mb-3">
                             <SideNav></SideNav>
                         </div>
                     </Col>
+
+                    {/* Details Data Column  */}
                     <Col lg="8">
                         <div className='card-group'>
                             {
