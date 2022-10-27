@@ -23,6 +23,8 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, { replace: true })
+                console.log(from)
             })
             .catch(error => console.error(error))
     }
@@ -32,7 +34,9 @@ const Login = () => {
         loginInWithGithub(githubProvider)
             .then(result => {
                 const user = result.user
-                console.log(user)
+                console.log(user);
+                navigate(from, { replace: true })
+                console.log(from)
             })
             .catch(error => {
                 console.error(error)
